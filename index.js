@@ -1,52 +1,61 @@
 function changeMode() {
-  let body = document.getElementById("webpage");
-  body.style.backgroundColor = "black";
-  body.style.color = "white";
+  let element = document.body;
+  element.classList.toggle("dark-mode");
 }
 
 let factsList = [
   {
     fact: "Trees make oxygen that we need to breathe.",
     false_fact: "Trees make poisonous gas that we should not breathe.",
+    img: "oxygen.gif",
   },
   {
     fact: "A group of cows is called a herd.",
     false_fact: "A group of cows is called a flock.",
+    img: "cows.jpg",
   },
   {
     fact: "The Earth is a giant ball that we live on.",
     false_fact: "The Earth is flat like a pancake.",
+    img: "earth_ball.webp",
   },
   {
     fact: "A butterfly starts as a caterpillar and turns into a butterfly after it goes into a cocoon.",
     false_fact:
       "A butterfly starts as a bird and turns into a butterfly after it hatches from an egg.",
+    img: "caterpillar.avif",
   },
   {
     fact: "There are seven colors in a rainbow: red, orange, yellow, green, blue, indigo, and violet.",
     false_fact:
       "There are five colors in a rainbow: red, yellow, green, blue, and purple.",
+    img: "rainbow.jpg",
   },
   {
     fact: "A baby kangaroo is called a joey and lives in its mother's pouch.",
     false_fact: "A baby kangaroo is called a puppy and lives in a doghouse.",
+    img: "kangaroo.jpg",
   },
   {
     fact: "Birds lay eggs to have babies, just like chickens.",
     false_fact: "Birds lay eggs to make pancakes, just like people.",
+    img: "birdsneggs.jpg",
   },
   {
     fact: "The sun rises in the east and sets in the west.",
     false_fact: "The sun rises in the west and sets in the east.",
+    img: "sunrise.jpg",
   },
   {
     fact: "A full moon is a circle, but a crescent moon looks like a banana.",
     false_fact:
       "A full moon is a square, but a crescent moon looks like a star.",
+    img: "banana.webp",
   },
   {
     fact: "Cars need gas to go, just like people need food to have energy.",
     false_fact: "Cars run on magic and do not need gas to go.",
+    img: "cars.jpg",
   },
 ];
 
@@ -75,11 +84,13 @@ function reloadPage() {
     let fact_text = factsList[fact_no].fact;
     document.getElementById("fact_id").innerHTML = fact_counter;
     document.getElementById("fact_text").innerHTML = fact_text;
+    document.getElementById("fact_image").src = factsList[fact_no].img;
   } else {
     let fact_no = randomGenerator(0, 9);
     let fact_text = factsList[fact_no].fact;
     document.getElementById("fact_id").innerHTML = fact_counter + 1;
     document.getElementById("fact_text").innerHTML = fact_text;
+    document.getElementById("fact_image").src = factsList[fact_no].img;
     fact_learn_history.push(fact_no);
     fact_counter += 1;
   }
@@ -101,6 +112,7 @@ function nextFact() {
       let fact_text = factsList[fact_no].fact;
       document.getElementById("fact_id").innerHTML = fact_counter + 1;
       document.getElementById("fact_text").innerHTML = fact_text;
+      document.getElementById("fact_image").src = factsList[fact_no].img;
       fact_counter += 1;
     }
     // if the user is at the end of the facts list, then a new fact is generated
@@ -112,6 +124,7 @@ function nextFact() {
       let fact_text = factsList[fact_no].fact;
       document.getElementById("fact_id").innerHTML = fact_counter + 1;
       document.getElementById("fact_text").innerHTML = fact_text;
+      document.getElementById("fact_image").src = factsList[fact_no].img;
       fact_counter += 1;
       fact_learn_history.push(fact_no);
     }
@@ -137,6 +150,7 @@ function prevFact() {
     let fact_text = factsList[fact_no].fact;
     document.getElementById("fact_id").innerHTML = fact_counter;
     document.getElementById("fact_text").innerHTML = fact_text;
+    document.getElementById("fact_image").src = factsList[fact_no].img;
     localStorage.setItem(
       "fact_learn_history",
       JSON.stringify(fact_learn_history)
