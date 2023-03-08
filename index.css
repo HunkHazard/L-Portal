@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    
+}
+
+.webpage{
+    background-color: white;
+    color: black;
+}
+
+#main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+#mode{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    height: 10%;
+    margin-bottom: 20%;
+}
+
+.container{
+    height: 40%;
+    width: 100%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#learn{
+    display: flex;
+    width: 55%;
+    height: 25%;
+}
+
+#facts{
+    width: 100%;
+}
+
+#facts > button{
+    width: 100%;
+    height: 100%;
+}
+
+#test{
+    display: flex;
+    width: 55%;
+    height: 25%;
+}
+
+#quiz{
+    width: 100%;
+}
+
+#quiz > button{
+    width: 100%;
+    height: 100%;
+}
+
+#fact_image{
+    width: auto;
+    height: 100%;
+}
+
+#text_container{
+    height: 15%;
+}
+
+#text_container > p{
+    font-size: 1.5em;
+    text-align: center;
+}
+
+#button_container{
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+#button_container > button{
+    width: 40%;
+    height: 30%;
+}
+
+#choice{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 7%;
+    width: 100%;
+}
+
+#parent{
+    position: relative;
+}
+
+#result{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 70%;
+    width: 90%;
+    
+    transform: translate(-50%, -50%);
+    border: 1px solid black;
+    background-color: white;
+    display: flex;
+    visibility: hidden;
+
+}
+
+#sibling{
+    width: 100%;
+    height: 80%;
+    filter: blur(0px);
+}

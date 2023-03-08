@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>L-Portal Quiz</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body class="webpage" onload="quizPageLoad()" id="parent">
+    <div class="container" id="sibling">
+      <h1>Question Number <span id="quest_id"></span></h1>
+
+      <div class="container">
+        <img src="pic1.avif" alt="Picture" id="fact_image" />
+      </div>
+      <div class="container" id="text_container"><p id="quest_text"></p></div>
+      <div class="container" id="choice"></div>
+      <div class="container" id="button_container">
+        <button id="next_question" onclick="nextQuest()">Next Question</button>
+      </div>
+    </div>
+    <div class="container" id="result">
+      <div class="container" id="reaction_image">
+        <img id="my_honest_reaction" src="" alt="reaction_picture" />
+      </div>
+      <div class="container" id="reaction_text"></div>
+      <div class="container" id="score"></div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
