@@ -209,6 +209,7 @@ function quizPageLoad() {
     // localStorage.setItem("question_text", JSON.stringify(question_text));
     document.getElementById("quest_id").innerHTML = question_counter;
     document.getElementById("quest_text").innerHTML = quest_text;
+    document.getElementById("fact_image").src = factsList[question_no].img;
     document.getElementById(
       "choice"
     ).innerHTML = `<label><input type="radio" name="answer" value="true">True</label>
@@ -219,6 +220,8 @@ function quizPageLoad() {
     question_text.push(quest_text);
     document.getElementById("quest_id").innerHTML = question_counter + 1;
     document.getElementById("quest_text").innerHTML = quest_text;
+    document.getElementById("fact_image").src = factsList[question_no].img;
+
     document.getElementById(
       "choice"
     ).innerHTML = `<label><input type="radio" name="answer" value="true">True</label>
@@ -314,10 +317,12 @@ function nextQuest() {
 
       document.getElementById("quest_id").innerHTML = question_counter + 1;
       document.getElementById("quest_text").innerHTML = quest_text;
+      document.getElementById("fact_image").src = factsList[question_no].img;
+
       document.getElementById(
         "choice"
-      ).innerHTML = `<label><input type="radio" name="answer" value="true">True</label>
-    <label><input type="radio" name="answer" value="false">False</label>`;
+      ).innerHTML = `<label class="radio"><input type="radio" name="answer" value="true"> True</label>
+    <label class="radio"><input type="radio" name="answer" value="false"> False</label>`;
       question_counter += 1;
       return;
     }
@@ -332,10 +337,13 @@ function nextQuest() {
 
       document.getElementById("quest_id").innerHTML = question_counter + 1;
       document.getElementById("quest_text").innerHTML = quest_text;
+
+      document.getElementById("fact_image").src = factsList[question_no].img;
+
       document.getElementById(
         "choice"
-      ).innerHTML = `<label><input type="radio" name="answer" value="true">True</label>
-    <label><input type="radio" name="answer" value="false">False</label>`;
+      ).innerHTML = `<label class="radio"><input type="radio" name="answer" value="true"> True</label>
+    <label class="radio"><input type="radio" name="answer" value="false"> False</label>`;
       question_counter += 1;
       question_answer_history.push(question_no);
     }
@@ -362,11 +370,14 @@ function nextQuest() {
     backgroud.style.filter = "blur(5px)";
     scoreCard.style.visibility = "visible";
     if (score >= 30) {
-      document.getElementById("reaction_text").innerHTML =
-        "Congratulations! You have passed the test!";
+      document.getElementById(
+        "reaction_text"
+      ).innerHTML = `<span style="color:green">Success</span>Congratulations! You have passed the test!`;
+      document.getElementById("my_honest_reaction").src = "success.gif";
     } else {
-      document.getElementById("reaction_text").innerHTML =
-        "Sorry! You have failed the test!";
+      document.getElementById(
+        "reaction_text"
+      ).innerHTML = `<span style="color:red">FAILURE</span>Better Luck Next Time, Kiddo!`;
       document.getElementById("my_honest_reaction").src = "u_lose.gif";
     }
 

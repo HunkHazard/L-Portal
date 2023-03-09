@@ -9,10 +9,12 @@
   </head>
   <body class="webpage" onload="quizPageLoad()" id="parent">
     <div class="container" id="sibling">
-      <h1>Question Number <span id="quest_id"></span></h1>
+      <div class="container" id="quiz_quest_no">
+        <h1>Question Number <span id="quest_id"></span></h1>
+      </div>
 
       <div class="container">
-        <img src="pic1.avif" alt="Picture" id="fact_image" />
+        <img src="" alt="Picture" id="fact_image" />
       </div>
       <div class="container" id="text_container"><p id="quest_text"></p></div>
       <div class="container" id="choice"></div>
@@ -24,10 +26,14 @@
       <div class="container" id="reaction_image">
         <img id="my_honest_reaction" src="" alt="reaction_picture" />
       </div>
-      <div class="container" id="reaction_text"></div>
-      <div class="container" id="score"></div>
+      <span class="container" id="reaction_text"></span>
+      <span id="score_line"
+        >Your Score <span class="container" id="score"></span
+      ></span>
       <div class="container" id="return_home">
-        <a href="main.html" id="home"><button>Return Home</button></a>
+        <a href="index.html" id="home"
+          ><button id="final_button">Return Home</button></a
+        >
       </div>
     </div>
     <script src="index.js"></script>
