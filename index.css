@@ -9,6 +9,12 @@ html,body{
     color: white;
 }
 
+#main_page_bg{
+    background-image: url(main_bg.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
 #main{
     display: flex;
     flex-direction: column;
@@ -39,6 +45,7 @@ html,body{
 
 #learn{
     display: flex;
+    margin-bottom: 2%;
     width: 55%;
     height: 25%;
 }
@@ -54,6 +61,7 @@ html,body{
 
 #test{
     display: flex;
+    margin-top: 2%;
     width: 55%;
     height: 25%;
 }
@@ -130,4 +138,50 @@ html,body{
     width: 100%;
     height: 80%;
     filter: blur(0px);
+}
+
+
+#back_button_div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 10%;
+}
+
+
+button > a{
+    outline: none;
+    text-decoration: none;
+    color: inherit;
+}
+
+#back_button{
+    /* width: 3vw
+    height: 1vw; */
+    display: flex;
+    padding: 1rem 3rem;
+    cursor: pointer;
+}
+
+#back_button > a {
+    height: 100%;
+    width: 100%;
+}
+
+#title{
+    height: 10%;
+}
+
+#main_page_mid{
+    width: 40%;
+    border: 1px solid white;
+    /* background-image: url(main_bg.jpg); */
+    /* background-size; */
+    
+    /* background-color: bisque; */
+}
+
+#main_page_mid:hover{
+    box-shadow: 6px 6px 6px yellow;
 }
